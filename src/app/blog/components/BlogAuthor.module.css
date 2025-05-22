@@ -1,0 +1,33 @@
+
+
+.wrapper {
+  margin: 40px auto;
+  padding: 40px 20px;
+  text-align: center;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.heading {
+  font-size: 22px;
+  margin-bottom: 20px;
+  font-weight: 400;
+  color: #1a1a1a;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.description {
+  font-size: 16px;
+  color: #4e5263;
+  line-height: 1.6;
+  text-align: left;
+  padding: 0 10px;
+}
+
