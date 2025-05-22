@@ -10,7 +10,7 @@ export default function BlogHeader() {
             src="/banner.png" 
             alt="My Image"
             width={1900} 
-            height={600} 
+            height={660} 
             className="image-header"
           />
         </div>
