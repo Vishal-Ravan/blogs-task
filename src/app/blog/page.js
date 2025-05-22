@@ -1,20 +1,19 @@
+import dynamic from "next/dynamic";
 
-import dynamic from 'next/dynamic';
-
-const BlogHeader = dynamic(() => import('./components/BlogHeader'));
-const BlogleftContent = dynamic(() => import('./components/BlogleftContent'));
-const BlogRightAside = dynamic(() => import('./components/BlogRightAside'));
-const RelatedArticles = dynamic(() => import('./components/RelatedArticles'));
+const BlogHeader = dynamic(() => import("./components/BlogHeader"));
+const BlogleftContent = dynamic(() => import("./components/BlogleftContent"));
+const BlogRightAside = dynamic(() => import("./components/BlogRightAside"));
+const RelatedArticles = dynamic(() => import("./components/RelatedArticles"));
 
 export default function Blog() {
-    return (
-        <div >
-            <BlogHeader />
-            <div className='container blog-detail-section'>
-                <BlogleftContent />
-                <BlogRightAside />
-            </div>
-            <RelatedArticles/>
-        </div>
-    );
+  return (
+    <div>
+      <BlogHeader />
+      <div className="container blog-detail-section">
+        <BlogleftContent />
+        <BlogRightAside />
+      </div>
+      <RelatedArticles />
+    </div>
+  );
 }

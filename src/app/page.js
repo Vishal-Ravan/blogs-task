@@ -1,10 +1,10 @@
 import dynamic from "next/dynamic";
 
 export default function Home() {
-  const Blog = dynamic(() => import("./blog/page"));
+  const Home = dynamic(() => import("./home/page"));
   return (
-    <div >
-      <Blog />
+    <div>
+      <Home />
     </div>
   );
 }

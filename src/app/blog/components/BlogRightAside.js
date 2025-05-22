@@ -3,7 +3,8 @@ import dynamic from 'next/dynamic';
 const BlogCard = dynamic(() => import('./BlogCard'));
 const TourGuide = dynamic(() => import('./TourGuide'));
 
-export default function BlogRightAside() {
+export default function BlogRightAside({ blog }) {
+  if (!blog) return null;
     return (
         <>
             <div className="">

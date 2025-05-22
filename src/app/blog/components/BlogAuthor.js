@@ -1,12 +1,12 @@
 import Image from "next/image";
 import styles from "./BlogAuthor.module.css";
 
-export default function BlogAuthor() {
+export default function BlogAuthor({user}) {
   return (
     <div className={styles.wrapper}>
-      <h2 className={styles.heading}>About Alex Carter</h2>
+      <h2 className={styles.heading}>About {user.name}</h2>
       <Image
-        src="/banner.png"
+      src={user.profile_image_90 || "/banner.png"}
         alt="Alex Carter"
         width={50}
         height={50}
