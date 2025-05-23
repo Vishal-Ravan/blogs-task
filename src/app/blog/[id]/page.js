@@ -7,6 +7,8 @@ const BlogHeader = dynamic(() => import("../components/BlogHeader"));
 const BlogleftContent = dynamic(() => import("../components/BlogleftContent"));
 const BlogRightAside = dynamic(() => import("../components/BlogRightAside"));
 const RelatedArticles = dynamic(() => import("../components/RelatedArticles"));
+const CommentForm = dynamic(() => import("../components/CommentForm"));
+const Comments = dynamic(() => import("../components/Comments"));
 
 export default function BlogDetail() {
   const { id } = useParams();
@@ -30,6 +32,11 @@ export default function BlogDetail() {
         <BlogleftContent blog={blog} />
         <BlogRightAside blog={blog} />
       </div>
+      <div className="container ">
+<Comments/>
+        <CommentForm />
+        </div>
+
       <RelatedArticles blog={blog} />
     </main>
   );

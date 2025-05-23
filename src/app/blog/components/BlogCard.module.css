@@ -49,10 +49,17 @@
   margin: 0;
 }
 
-@media (min-width: 480px) and (max-width: 768px) {
+@media (min-width: 576px) and (max-width: 768px) {
  .cardWrap{
 display: grid;
-grid-template-columns: 1fr 1fr;
+/* grid-template-columns: 1fr 1fr; */
 gap: 10px;
 }
+}
+
+@media (max-width: 576px) {
+  .card {
+  max-width: 100%;
+  display: none;
+  }
 }

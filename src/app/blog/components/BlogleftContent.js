@@ -31,8 +31,6 @@ export default function BlogleftContent({ blog }) {
         </div>
         <BlogAuthor user={blog.user} />
         <BlogNavigation />
-        <Comments />
-        <CommentForm />
       </aside>
     </>
   );

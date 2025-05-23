@@ -1,8 +1,16 @@
 'use client';
+import Image from 'next/image';
 import { useState } from 'react';
 
 export default function CommentForm() {
-  const [rating, setRating] = useState('Good');
+  const [rating, setRating] = useState(null);
+
+  const ratings = [
+    { value: 0, image: '/em.png', alt: 'Angry' },
+    { value: 1, image: '/em1.png', alt: 'Neutral' },
+    { value: 2, image: '/em2.png', alt: 'Smile' },
+    { value: 3, image: '/em3.png', alt: 'Happy' },
+  ];
 
   return (
     <div className="comment-form-container">
@@ -25,26 +33,28 @@ export default function CommentForm() {
           </label>
         </div>
       </form>
+
       <div className="form-footer-main">
-
-      <div className="form-footer">
-        <label className="rating-label">Rate The Usefulness Of The Article</label>
-        <div className="rating-options">
-          {['😠', '😐', '🙂', '😊', '😁'].map((emoji, index) => (
-            <span
-              key={index}
-              className={`emoji ${rating === index ? 'selected' : ''}`}
-              onClick={() => setRating(index)}
-            >
-              {emoji}
-            </span>
-          ))}
-          <button type="button" className="good-button">😊 Good</button>
+        <div className="form-footer">
+          <label className="rating-label">Rate The Usefulness Of The Article</label>
+          <div className="rating-options">
+            {ratings.map((rate) => (
+              <Image
+                key={rate.value}
+                src={rate.image}
+                height={16}
+                width={16}
+                alt={rate.alt}
+                className={`emoji ${rating === rate.value ? 'selected' : ''}`}
+                onClick={() => setRating(rate.value)}
+                
+              />
+            ))}
+            <button type="button" className="good-button"><Image src="/em4.png" alt="" width={16} height={16}/> Good</button>
+          </div>
         </div>
-
+        <button type="submit" className="send-button"><Image src="/msg.png" alt="" width={16} height={16}/> Send</button>
       </div>
-          <button type="submit" className="send-button">✉ Send</button>
-</div>
     </div>
   );
 }
