@@ -32,7 +32,7 @@ export default function BlogList() {
         {blogs.map((blog) => (
           <div key={blog.id} style={{ border: '1px solid #ddd', padding: '1rem' }}>
             <img
-              src={blog.cover_image || '/images/default.jpg'}
+              src={blog.social_image || '/images/default.jpg'}
               alt={blog.title}
               style={{ width: '100%', height: '200px', objectFit: 'cover' }}
             />

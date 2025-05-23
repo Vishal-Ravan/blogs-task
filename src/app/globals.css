@@ -1,6 +1,7 @@
 :root {
   --container-padding: 16px;
   --container-max-width: 1200px;
+  --fz-14: 14px;
   --fz-16: 1rem;
   --fz-18: 1.1rem;
   --fz-20: 1.2rem;
@@ -8,12 +9,13 @@
   --fz-26: 1.4rem;
   --fz-28: 1.6rem;
   --fz-32: 2rem;
+  --fz-48: 48px;
 }
 body {
   background-color: #fff;
   color: #000;
   margin: 0;
-  font-family: "Roboto", sans-serif;
+ font-family: 'Lato', sans-serif;
   padding: 0;
   box-sizing: border-box;
 }
@@ -26,7 +28,7 @@ h2 {
 }
 p {
   font-size: var(--fz-16);
-  line-height: 1.4;
+  line-height: 24px;
   color: #11162e;
 }
 /* Responsive container class */
@@ -52,10 +54,6 @@ p {
 @media (max-width: 768px) {
   :root {
     --container-padding: 12px;
-  }
-
-  h2 {
-    font-size: var(--fz-26);
   }
 
   .container.blog-detail-section {
@@ -87,31 +85,56 @@ p {
 .blog-header {
   text-align: center;
   padding: 20px 0px;
+  min-height: 100vh;
 }
+
+.blog-header p{
+color: #262D4D;
+font-weight: 700;
+font-size: var(--fz-14);
+}
+.blog-header p span{
+  font-weight: 500;
+}
+
 .blog-header .image-header {
   width: 100%;
   height: 100%;
-  max-height: 660px;
+  min-height: 78vh;
   object-fit: cover;
 }
 .blog-header h2 {
-  margin-bottom: 30px;
+  font-size: var(--fz-48);
+  font-weight: 500;
+  margin-bottom: 50px;
+  margin-top: 0;
+  line-height: 1.2;
 }
 .blog-left-side {
   display: flex;
   justify-content: space-between;
   padding-bottom: 20px;
-  border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid #E5E6EA;
   margin-bottom: 30px;
   color: #4e5263;
+}
+.blog-left-side {
+  line-height: 20px;
+  color: #4E5265;
+  font-weight: 600;
 }
 .header-profile {
   display: flex;
   align-items: center;
+  font-size: var(--fz-16);
   gap: 10px;
+  color: #4E5265;
+  font-weight: 600;
 }
 .header-profile img {
   border-radius: 50px;
+  width: 32px;
+  height: 32px;
 }
 
 .blog-detail-section {
@@ -120,13 +143,34 @@ p {
   grid-template-columns: 3fr 1fr;
 }
 
+
+.parablog-center{
+  font-weight: 600;
+  padding: 35px 20px;
+  font-style: italic;
+  border-top: 1px solid #E5E6EA;
+  border-bottom: 1px solid #E5E6EA;
+
+}
+.blog-right-sidde h3{
+  color: #10152E;
+  font-size: var(--fz-20);
+  font-weight: 600;
+  letter-spacing: 1px;
+
+  margin-top: 16px;
+  margin-bottom: 50px;
+}
+.blog-desc p{
+  margin-bottom: 30px;
+}
 /* blog Navigation Start  ************************ */
 
 .post-nav-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 40px 0;
+  padding: 0px 0;
 }
 
 .nav-item {
@@ -143,6 +187,7 @@ p {
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  font-size: var(--fz-16);
   padding: 8px 16px;
   border: 1px solid #050b1c;
   border-radius: 4px;
@@ -160,6 +205,7 @@ p {
   font-size: 14px;
   color: #262f4d;
   margin-top: 8px;
+  font-weight: 400;
   font-family: sans-serif;
 }
 
@@ -172,10 +218,12 @@ p {
 /* tour Guide Start ****************************** */
 
 .tour-guides h2 {
-  font-size: 18px;
-  margin-bottom: 20px;
-  color: #1a1a1a;
-  font-weight: 500;
+ color: #10152e;
+    font-size: var(--fz-20);
+    letter-spacing: 1px;
+    margin-top: 16px;
+    margin-bottom: 50px;
+    font-weight: 600;
 }
 
 .tour-guides ul {
@@ -189,7 +237,7 @@ p {
   align-items: flex-start;
   margin-bottom: 30px;
   padding-bottom: 36px;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #E5E6EA;
 }
 
 /* Remove border from the last item */
@@ -207,6 +255,9 @@ p {
 .guide-info {
   flex: 1;
 }
+.guide-info p{
+  font-weight: 400;
+}
 
 .name {
   font-weight: bold;
@@ -215,12 +266,14 @@ p {
 
 .location {
   font-size: 14px;
-  color: #333333;
+  color: #000000;
   margin: 2px 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 180px;
+  display: flex;align-items: center;
+  gap: 6px;
 }
 
 .rating {
@@ -237,8 +290,8 @@ p {
 }
 
 .score {
-  font-size: 13px;
-  color: #555;
+  font-size: 15px;
+  color: #121212;
 }
 
 /* Tour Guide End ****************************** */
@@ -249,12 +302,12 @@ p {
   font-family: sans-serif;
   max-width: 900px;
   margin: auto;
-  padding: 20px;
+  padding: 20px 0px;
 }
 
 .comments-title {
-  font-size: 18px;
-  font-weight: bold;
+  font-size: var(--fz-20);
+  font-weight: 500;
   margin-bottom: 24px;
 }
 
@@ -262,14 +315,17 @@ p {
   display: flex;
   gap: 16px;
   padding: 20px 0;
+  align-items: center;
 }
 
 .bordered {
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid #DEDEDE;
 }
 
 .avatar {
   border-radius: 50%;
+  height: 60px;
+  width: 60px;
 }
 
 .comment-right {
@@ -286,6 +342,8 @@ p {
 
 .comment-name {
   margin-right: 4px;
+  font-weight: 400;
+  font-size: var(--fz-16);
 }
 
 .stars {
@@ -294,8 +352,9 @@ p {
 }
 
 .comment-score {
-  font-size: 14px;
-  color: #444;
+  font-size: 15px;
+  color: #121212;
+  font-weight: 400;
 }
 
 .comment-date {
@@ -305,9 +364,9 @@ p {
 }
 
 .comment-text {
-  font-size: 15px;
-  color: #444;
-  line-height: 1.4;
+  font-size: var(--fz-16);
+  color: #10152E;
+  line-height: 24px;
   margin: 0;
 }
 .form-footer-main {
@@ -320,14 +379,13 @@ p {
 /* CommentForm Start ***************** */
 
 .comment-form-container {
-  padding: 20px;
   max-width: 1000px;
   margin: auto;
 }
 
 .form-title {
-  font-size: 16px;
-  font-weight: 500;
+  font-size: var(--fz-16);
+  font-weight: 500;letter-spacing: 1px;
   margin-bottom: 20px;
 }
 
@@ -347,21 +405,21 @@ p {
 }
 
 label {
-  font-size: 14px;
+  font-size: var(--fz-16);
   font-weight: 500;
-  color: #222;
-  display: flex;
+  color: #3E3232;
+  letter-spacing: 1px;
+  display: flex;gap: 15px;
   flex-direction: column;
-  gap: 5px;
 }
 
 input,
 textarea {
   background: #f5f5f5;
   border: none;
-  border-radius: 8px;
+  border-radius: 12px;
   padding: 12px;
-  font-size: 14px;
+  font-size: var(--fz-14);
   resize: vertical;
 }
 

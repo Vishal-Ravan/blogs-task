@@ -6,19 +6,19 @@ const guides = [
     name: 'Miranda Rachel',
     location: 'Jombang, Jawa timur',
     rating: 4.0,
-    image: '/banner.png', // Replace with real path
+    image: '/girl.png', // Replace with real path
   },
   {
     name: 'Danielle Marsh',
     location: 'Wonosobo, Jawa tengah',
     rating: 4.0,
-    image: '/banner.png', // Replace with real path
+    image: '/girl1.png', // Replace with real path
   },
   {
     name: 'Kang Haerin',
     location: 'Bandung, Jawa barat',
     rating: 5.0,
-    image: '/banner.png', // Replace with real path
+    image: '/girl2.png', // Replace with real path
   },
 ];
 
@@ -44,8 +44,8 @@ export default function TourGuides() {
               <Image
                 src={guide.image}
                 alt={guide.name}
-                width={50}
-                height={50}
+                width={60}
+                height={60}
                 className="avatar"
               />
                <div className="rating">
@@ -55,7 +55,7 @@ export default function TourGuides() {
             </div>
             <div className="guide-info">
               <p className="name">{guide.name}</p>
-              <p className="location">📍 {guide.location}</p>
+              <p className="location"><Image src="/map.png" alt="" width={16} height={16} /> {guide.location}</p>
              
             </div>
           </li>

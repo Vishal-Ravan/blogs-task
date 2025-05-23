@@ -11,11 +11,11 @@ export default function CommentForm() {
         <div className="form-left">
           <label>
             Name
-            <input type="text" placeholder="Your Name" />
+            <input type="text" placeholder="" />
           </label>
           <label>
             Email
-            <input type="email" placeholder="Your Email" />
+            <input type="email" placeholder="" />
           </label>
         </div>
         <div className="form-right">

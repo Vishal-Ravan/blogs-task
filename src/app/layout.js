@@ -1,12 +1,5 @@
-import { Roboto } from "next/font/google";
 import "./globals.css";
 
-// Load Roboto font
-const roboto = Roboto({
-  subsets: ["latin"],
-  weight: ["100", "300", "400", "500", "700", "900"], // pick weights you need
-  variable: "--font-roboto",
-});
 
 export const metadata = {
   title: "Create Next App",
@@ -15,10 +8,14 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={roboto.variable}>
-        {children}
-      </body>
+     <html lang="en">
+      <head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body>{children}</body>
     </html>
   );
 }

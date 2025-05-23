@@ -4,14 +4,14 @@ const comments = [
   {
     name: "Kang Haerin",
     rating: 5.0,
-    avatar: "/haerin.jpg",
+    avatar: "/girl2.png",
     text: `Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus`,
     date: "22 Jul 2022",
   },
   {
     name: "Kang Haerin",
     rating: 5.0,
-    avatar: "/haerin.jpg",
+    avatar: "/girl2.png",
     text: `Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus`,
     date: "22 Jul 2022",
   },
@@ -41,7 +41,7 @@ export default function Comments() {
         >
           <div className="comment-left">
             <Image
-              src="/banner.png"
+              src="/girl2.png"
               alt={comment.name}
               width={50}
               height={50}

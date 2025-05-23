@@ -4,7 +4,7 @@ export default function BlogHeader() {
     <>
       <div className="container-fluid">
         <div className="blog-header">
-          <p>Home / Articles</p>
+          <p>Home <span>/ Articles</span></p>
           <h2>The Ultimate Guide to Full-Body Workouts</h2>
           <Image
             src="/banner.png" 

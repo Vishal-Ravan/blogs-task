@@ -1,18 +1,19 @@
 
 
 .wrapper {
-  margin: 40px auto;
-  padding: 40px 20px;
+  margin: 30px auto;
+  padding: 30px 20px;
   text-align: center;
   border-top: 1px solid #eee;
   border-bottom: 1px solid #eee;
 }
 
 .heading {
-  font-size: 22px;
+  font-size: 20px;
   margin-bottom: 20px;
   font-weight: 400;
-  color: #1a1a1a;
+  color: #10152E;
+  letter-spacing: 1px;
 }
 
 .avatar {
@@ -26,8 +27,10 @@
 .description {
   font-size: 16px;
   color: #4e5263;
-  line-height: 1.6;
+  line-height: 24px;
   text-align: left;
+  font-style: italic;
+  font-weight: 600;
   padding: 0 10px;
 }
 
