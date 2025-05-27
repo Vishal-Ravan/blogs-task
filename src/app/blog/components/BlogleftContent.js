@@ -6,7 +6,7 @@ const Comments = dynamic(() => import("./Comments"));
 const CommentForm = dynamic(() => import("./CommentForm"));
 export default function BlogleftContent({ blog }) {
   if (!blog) return null;
-  console.log(blog, 'kok')
+  // console.log(blog, 'kok')
   return (
     <>
       <aside>
@@ -29,8 +29,10 @@ export default function BlogleftContent({ blog }) {
           <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus </p>
           <p>mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean</p>
         </div>
-        <BlogAuthor user={blog.user} />
+      <div className="blog-auth1">
+          <BlogAuthor user={blog.user} />
         <BlogNavigation />
+      </div>
       </aside>
     </>
   );

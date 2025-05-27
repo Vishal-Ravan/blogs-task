@@ -15,7 +15,7 @@ export default function RelatedArticles() {
         if (!res.ok) throw new Error('Failed to fetch');
         const data = await res.json();
         setArticles(data);
-        console.log(data);
+        // console.log(data);
       } catch (err) {
         setError(err.message);
       } finally {

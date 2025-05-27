@@ -1,5 +1,5 @@
 :root {
-  --container-padding: 16px;
+  --container-padding: 36px;
   --container-max-width: 1200px;
   --fz-14: 14px;
   --fz-16: 1rem;
@@ -54,10 +54,19 @@ p {
 /* Optional: Adjust padding on smaller screens */
 @media (max-width: 768px) {
   :root {
-    --container-padding: 12px;
+    --container-padding: 26px;
   }
-
- 
+.blog-auth{
+  display: block !important;
+}
+ .blog-auth1{
+  display: none !important;
+}
+.articles-grid{
+  display: grid !important;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px !important;
+}
   .articles-grid .article-card {
     max-width: 100%;
   }
@@ -65,17 +74,17 @@ p {
     height: 200px;
   }
   .form-footer {
-    flex-direction: column;
-    text-align: center;
     padding: 10px;
   }
-
+.section-title{
+  font-size: var(--fz-28) !important;
+}
 }
 
 @media (max-width: 576px) {
 
   :root {
-    --container-padding: 8px;
+    --container-padding: 12px;
   }
   .container-fluid .blog-header h2{
     font-size: var(--fz-28);
@@ -95,8 +104,21 @@ p {
     display: none;
   }
   .comment-form{
-    display: inherit;
+    display: inherit !important;
   }
+  .form-footer{
+    flex-direction: column;
+  }
+  .send-button{
+    width: 100%;
+  }
+  .articles-grid{
+  grid-template-columns: 1fr ;
+}
+.related-articles
+{
+  background-color: #fff !important;
+}
 }
 
 /* blog page ********************** */
@@ -494,7 +516,6 @@ textarea {
 .rating-options {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
   gap: 10px;
 }
 
@@ -542,7 +563,7 @@ textarea {
 /* Realted Articles Start *********************** */
 
 .related-articles {
-  padding: 40px 20px;
+  padding: 40px 0px;
   background: #f5f5f6;
   text-align: center;
   margin-top: 30px;
@@ -559,7 +580,7 @@ textarea {
 
 .articles-grid {
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   justify-content: center;
   gap: 30px;
 }
@@ -664,5 +685,37 @@ textarea {
   font-size: 13px;
   color: #1d1d29;
 }
-
+.blog-auth{
+  display: none;
+}
+.blog-auth1{
+  display: block;
+}
 /* Home page End ************************** */
+.rating-options {
+  display: flex;
+  gap: 12px;
+}
+
+.emoji-wrapper {
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 12px;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.emoji-wrapper.selected {
+  background-color: #00BA5C;
+  color: #fff;
+  min-width: 80px;
+
+}
+
+.selected-rating-text {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #1f2937;
+}

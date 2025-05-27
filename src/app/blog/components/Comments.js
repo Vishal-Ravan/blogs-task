@@ -1,22 +1,5 @@
 import Image from "next/image";
 
-const comments = [
-  {
-    name: "Kang Haerin",
-    rating: 5.0,
-    avatar: "/girl2.png",
-    text: `Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus`,
-    date: "22 Jul 2022",
-  },
-  {
-    name: "Kang Haerin",
-    rating: 5.0,
-    avatar: "/girl2.png",
-    text: `Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus`,
-    date: "22 Jul 2022",
-  },
-];
-
 const StarRating = ({ rating }) => {
   const fullStars = Math.floor(rating);
   const emptyStars = 5 - fullStars;
@@ -28,7 +11,14 @@ const StarRating = ({ rating }) => {
   );
 };
 
-export default function Comments() {
+export default function Comments({ comments }) {
+  console.log(comments);
+
+  // Optional: if comments prop is empty or undefined, render a fallback message or empty state
+  if (!comments || comments.length === 0) {
+    return <p>No comments yet.</p>;
+  }
+
   return (
     <div className="comments-container">
       <h3 className="comments-title">Comments</h3>
@@ -37,11 +27,11 @@ export default function Comments() {
           className={`comment ${
             index !== comments.length - 1 ? "bordered" : ""
           }`}
-          key={index}
+          key={comment.id || index}
         >
           <div className="comment-left">
             <Image
-              src="/girl2.png"
+              src={comment.avatar || "/girl2.png"} // fallback avatar
               alt={comment.name}
               width={50}
               height={50}
@@ -55,9 +45,21 @@ export default function Comments() {
               <span className="comment-score">
                 ({comment.rating.toFixed(1)})
               </span>
-              <span className="comment-date">{comment.date}</span>
+             <span className="comment-date">
+  {(() => {
+    const [datePart] = comment.date.split(","); // "27/05/2025"
+    const [day, month, year] = datePart.split("/").map(Number); // [27, 5, 2025]
+    const parsedDate = new Date(year, month - 1, day); // month is 0-based
+    return parsedDate.toLocaleDateString("en-GB", {
+      day: "2-digit",
+      month: "short",
+      year: "numeric",
+    }); // ➝ "27 May 2025"
+  })()}
+</span>
+
             </div>
-            <p className="comment-text">{comment.text}</p>
+            <p className="comment-text">{comment.text || comment.comment}</p>
           </div>
         </div>
       ))}
